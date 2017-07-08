@@ -2,36 +2,45 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #9e9e9e;
+}
 #wrapper{
-    border: 1px solid green;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    width: 500px;
+    height: 500px;
 }
 #table {
 
-    border: 1px auto blue;
-
-    margin: 70px auto 0 auto;
+    width: 100%;
+    height: 100%;
 }
-
 
 
 td {
-    padding: 0;
-    width: 30px;
-    height: 30px;
-	border: 1px solid red;
+	border: .05px solid #607d8b;
 }
 .red {
-    background-color: red;
+    background-color: orange;
 }
 
 #clear, #gridsize {
     position: absolute;
     min-width: 30px;
     width: 10%;
-    background-color: rgba(255, 188, 0, 0.33);
+
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+     background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
 }
 
 #clear {
@@ -43,3 +52,4 @@ td {
     top: 40px;
     left: 50%;
 }
+

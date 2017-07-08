@@ -1,3 +1,5 @@
+
+var gridnum;
 function grid(gridsize) {
     for(var i=0;i<gridsize;i++) {
         $('#table').append("<tr>");
@@ -21,33 +23,23 @@ $(document).ready(function() {
     });
 
     //When user clicks on gridsize
-    $("#gridsize").click(function() {
-        var gridsize = prompt("Enter the grid size between 1 to 50");
+    $("#gridsize").on("click",function() {
 
-        if (gridsize == null) {
-
+        gridnum = prompt("Enter the gridsize between 1 to 100");
+        while(gridnum>100 || gridnum<0 || isNaN(gridnum) && gridnum!=null) {
+            gridnum = prompt("Wrong value! \n Enter the gridsize only between 1 and 100 \n OR \nclick cancel to return!");
         }
-        else if(50>gridsize>0) {
-            $("tr, td").css({"display":"none"});          //remove the initially loaded grids
-            for(var i=0;i<gridsize;i++) {
-                $('#table').append("<tr>");
-                for (var j = 0; j < gridsize; j++) {
-                    $('#table').find('tr').last().append("<td></td>");  //Load new grids with size 'gridsize'
-                }
-                $('#table').append("</tr>");
-            }
-
+        while(gridnum=="" || gridnum==0){
+            gridnum = prompt("Empty value is not accepted! \n Enter the gridsize only between 1 and 100 \n OR \nclick cancel to return!");
+        }
+        if(!isNaN(gridnum) && gridnum<=100 && gridnum>0 && gridnum!=null && gridnum!=""){
+            $("tr, td").css({"display":"none"});
+            grid(gridnum);
             $("td").hover(function() {
-                $(this).addClass("red");        //When user hovers over divs, make them red!
+                $(this).addClass("red");
             });
         }
-        else {
-            gridsize = prompt("Enter the grid size between 1 to 50");
-
-        }
     });
-
-
 
 
 });
